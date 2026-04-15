@@ -290,8 +290,6 @@ option( KICAD_IPC_API
 option( KICAD_IDF_TOOLS
     "Build additional idf tools"
     ON )
-    "Build additional idf tools"
-    ON )
 
 # Global setting: exports are explicit
 set( CMAKE_CXX_VISIBILITY_PRESET "hidden" )
