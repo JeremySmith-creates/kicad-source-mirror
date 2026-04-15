@@ -344,6 +344,15 @@ if( KICAD_IPC_API )
     )
 endif()
 
+if( KICAD_EXPERIMENTAL_COLLAB )
+    list( APPEND KICOMMON_SRCS
+        collab/collab_password_auth_provider.cpp
+        collab/collab_session_manager.cpp
+        collab/collab_transport_stub.cpp
+        collab/live_collab_client.cpp
+    )
+endif()
+
 add_library( kicommon SHARED
     ${KICOMMON_SRCS}
     )

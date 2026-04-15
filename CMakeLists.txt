@@ -127,6 +127,10 @@ option( KICAD_UPDATE_CHECK
     "Build in update check"
     ON )
 
+option( KICAD_EXPERIMENTAL_COLLAB
+    "Build experimental live collaboration scaffolding"
+    OFF )
+
 cmake_dependent_option( KICAD_WAYLAND
     "Support Wayland features"
     ON "UNIX_NOT_APPLE"
@@ -286,6 +290,8 @@ option( KICAD_IPC_API
 option( KICAD_IDF_TOOLS
     "Build additional idf tools"
     ON )
+    "Build additional idf tools"
+    ON )
 
 # Global setting: exports are explicit
 set( CMAKE_CXX_VISIBILITY_PRESET "hidden" )
@@ -320,6 +326,7 @@ add_compile_definitions( $<$<BOOL:${KICAD_USE_VALGRIND}>:KICAD_USE_VALGRIND> )
 add_compile_definitions( $<$<BOOL:${KICAD_GAL_PROFILE}>:KICAD_GAL_PROFILE> )
 add_compile_definitions( $<$<BOOL:${KICAD_WIN32_VERIFY_CODESIGN}>:KICAD_WIN32_VERIFY_CODESIGN> )
 add_compile_definitions( $<$<BOOL:${KICAD_UPDATE_CHECK}>:KICAD_UPDATE_CHECK> )
+add_compile_definitions( $<$<BOOL:${KICAD_EXPERIMENTAL_COLLAB}>:KICAD_EXPERIMENTAL_COLLAB> )
 
 if( KICAD_IPC_API )
     add_definitions( -DKICAD_IPC_API )
